@@ -461,10 +461,7 @@ namespace CodeImp.DoomBuilder.BuilderModes
 				}
 			}
 
-            if (Thing.IsFlagSet("8") && !General.Map.Config.SkillFlags)
-			{
-				pos.z += Thing.IsFlipped ? -info.HeightOffset : info.HeightOffset;
-			}
+            if (Thing.IsFlagSet("8")) pos.z += Thing.IsFlipped ? -info.HeightOffset : info.HeightOffset;
 			
 			// Apply settings
 			SetPosition(pos);

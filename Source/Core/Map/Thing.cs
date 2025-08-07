@@ -136,7 +136,7 @@ namespace CodeImp.DoomBuilder.Map
                 return ti.Hangs ^ IsReverse;
             }
         }
-        public bool IsReverse { get { return General.Map.SRB2 && !Unflippable && IsFlagSet("2"); } }
+        public bool IsReverse { get { return General.Map.SRB2 && !Unflippable && !General.Map.Config.SkillFlags && IsFlagSet("2"); } }
         public bool Unflippable { get { return General.Map.Data.GetThingInfo(Type).IsUnflippable; } }
         internal int LastProcessed { get { return lastProcessed; } set { lastProcessed = value; } }
 
@@ -612,7 +612,7 @@ namespace CodeImp.DoomBuilder.Map
 		// This checks and returns a flag without creating it
 		public bool IsFlagSet(string flagname)
 		{
-			if(flags.ContainsKey(flagname))
+            if (flags.ContainsKey(flagname))
 				return flags[flagname];
 			else
 				return false;
