@@ -582,7 +582,7 @@ namespace CodeImp.DoomBuilder
 			
 			// Remove the previous log file and start logging
 			if(File.Exists(logfile)) File.Delete(logfile);
-			General.WriteLogLine("Zone Builder v" + thisasm.GetName().Version.Major + "." + thisasm.GetName().Version.Minor + " startup"); //mxd
+			General.WriteLogLine("Legacy Builder v" + thisasm.GetName().Version.Major + "." + thisasm.GetName().Version.Minor + " startup"); //mxd
             General.WriteLogLine("Application path:        \"" + apppath + "\"");
             General.WriteLogLine("Temporary path:          \"" + temppath + "\"");
             General.WriteLogLine("Local settings path:     \"" + settingspath + "\"");

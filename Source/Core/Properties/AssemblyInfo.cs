@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Zone Builder")]
-[assembly: AssemblyDescription("SRB2 map editor, forked from GZDoom Builder")]
+[assembly: AssemblyTitle("Legacy Builder")]
+[assembly: AssemblyDescription("Lazy fork of Zone Builder for pre-2.1 SRB2 versions")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sonic Team Junior")]
-[assembly: AssemblyProduct("Zone Builder")]
-[assembly: AssemblyCopyright("Copyright © 2007, 2023")]
+[assembly: AssemblyProduct("Legacy Builder")]
+[assembly: AssemblyCopyright("Copyright © 2007, 2023, 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
