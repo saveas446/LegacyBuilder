@@ -207,10 +207,7 @@ namespace CodeImp.DoomBuilder.Controls
 
         public int GetFullType(int original)
         {
-            if (General.Map.SRB2)
-                return GetResult(original % 4096) + parameterid.GetResult(original / 4096) * 4096;
-            else
-                return GetResult(original);
+			return GetResult(original);
         }
 
 		//mxd

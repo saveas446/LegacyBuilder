@@ -451,7 +451,7 @@ namespace CodeImp.DoomBuilder.Windows
 		//mxd
 		private void UpdateTitle()
 		{
-			string programname = Application.ProductName + " v" + General.ThisAssembly.GetName().Version.Major + "." + General.ThisAssembly.GetName().Version.Minor;
+			string programname = Application.ProductName + " v" + General.ThisAssembly.GetName().Version.Major + "." + General.ThisAssembly.GetName().Version.Minor + "." + General.ThisAssembly.GetName().Version.Build;
 			// Map opened?
 			if (General.Map != null)
 			{

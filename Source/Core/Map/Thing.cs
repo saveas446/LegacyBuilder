@@ -103,8 +103,8 @@ namespace CodeImp.DoomBuilder.Map
 
 		public MapSet Map { get { return map; } }
 		public int FullType { get { return type; } set { BeforePropsChange(); type = value; } } //mxd
-        public int Type { get { if (General.Map.SRB2) return type % 4096; else return type; } set { BeforePropsChange(); if (General.Map.SRB2) type = (type / 4096) * 4096 + value; else type = value; } }
-        public int Parameter { get { if (General.Map.SRB2) return type / 4096; else return 0; } set { BeforePropsChange(); if (General.Map.SRB2) type = value * 4096 + (type % 4096); } }
+        public int Type { get { return type; } set { BeforePropsChange(); type = value; } }
+        public int Parameter { get { return 0; } set { BeforePropsChange();	} }
         public Vector3D Position { get { return pos; } }
 		public float ScaleX { get { return scaleX; } } //mxd. This is UDMF property, not actual scale!
 		public float ScaleY { get { return scaleY; } } //mxd. This is UDMF property, not actual scale!

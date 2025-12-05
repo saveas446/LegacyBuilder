@@ -53,14 +53,14 @@ namespace CodeImp.DoomBuilder.Windows
 			bContinue.Enabled = !cannotContinue;
 
 			string[] titles = {
-								  "Zone Builder was killed by Eggman's nefarious TV magic.",
-								  "Zone Builder was killed by an environmental hazard.",
-								  "Zone Builder drowned.",
-								  "Zone Builder was crushed.",
-								  "Zone Builder fell into a bottomless pit.",
-								  "Zone Builder asphyxiated in space.",
-								  "Zone Builder died.",
-								  "Zone Builder's playtime with heavy objects killed Zone Builder.",
+								  "Legacy Builder was killed by Eggman's nefarious TV magic.",
+                                  "Legacy Builder was killed by an environmental hazard.",
+                                  "Legacy Builder drowned.",
+                                  "Legacy Builder was crushed.",
+                                  "Legacy Builder fell into a bottomless pit.",
+                                  "Legacy Builder asphyxiated in space.",
+                                  "Legacy Builder died.",
+                                  "Legacy Builder's playtime with heavy objects killed Legacy Builder.",
 								  "Resynching...",
 								  "You have been banned from the server.",
 								  "SIGSEGV - segment violation",
