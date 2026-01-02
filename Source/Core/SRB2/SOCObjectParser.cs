@@ -27,10 +27,10 @@ namespace CodeImp.DoomBuilder.SRB2
         #region ================== Variables
 
         private Dictionary<string, SRB2Object> objects;
-        /*private Dictionary<string, SRB2State> states;
+        private Dictionary<string, SRB2State> states;
         private List<string> objectfreeslots;
         private List<string> statefreeslots;
-        private List<string> spritefreeslots;*/
+        private List<string> spritefreeslots;
         private IDictionary<string, int> flagValues = new Dictionary<string, int>
         {
             { "MF_SPECIAL", 0x1 },
@@ -84,20 +84,20 @@ namespace CodeImp.DoomBuilder.SRB2
             specialtokens = "=\n";
 
             objects = new Dictionary<string,SRB2Object>();
-            /*states = new Dictionary<string,SRB2State>();
+            states = new Dictionary<string,SRB2State>();
             objectfreeslots = new List<string>();
             statefreeslots = new List<string>();
-            spritefreeslots = new List<string>();*/
+            spritefreeslots = new List<string>();
         }
 
         // Disposer
         public void Dispose()
         {
             objects = null;
-            /*states = null;
+            states = null;
             objectfreeslots = null;
             statefreeslots = null;
-            spritefreeslots = null;*/
+            spritefreeslots = null;
         }
 
         #endregion
@@ -133,7 +133,7 @@ namespace CodeImp.DoomBuilder.SRB2
                         }
                         if (!ParseObject(tokens[1].ToUpperInvariant())) return false;
                         break;
-                    /*case "STATE":
+                    case "STATE":
                     case "FRAME":
                         if (tokens.Length < 2 || String.IsNullOrEmpty(tokens[1]))
                         {
@@ -141,7 +141,7 @@ namespace CodeImp.DoomBuilder.SRB2
                             break;
                         }
                         if (!ParseState(tokens[1].ToUpperInvariant())) return false;
-                        break;*/
+                        break;
                 }
             }
 
@@ -172,7 +172,7 @@ namespace CodeImp.DoomBuilder.SRB2
         private bool ParseObject(string objname)
         {
             if (objname == null) return false;
-            string name = objname;
+            string name = "SOC Thing #" + objname;
             string category = "";
             string sprite = DataManager.INTERNAL_PREFIX + "unknownthing";
             string[] states = new string[8];
@@ -326,7 +326,7 @@ namespace CodeImp.DoomBuilder.SRB2
             return true;
         }
 
-        /*private bool ParseState(string name)
+        private bool ParseState(string name)
         {
             if (name == null) return false;
             string spritename = "";
@@ -334,12 +334,17 @@ namespace CodeImp.DoomBuilder.SRB2
             string next = "";
             while (!streamreader.EndOfStream)
             {
+                string[] tokens;
                 string line = streamreader.ReadLine();
                 linenumber++;
                 if (String.IsNullOrEmpty(line) || line.StartsWith("\n")) break;
                 if (line.StartsWith("#")) continue;
                 line = RemoveComments(line);
-                string[] tokens = line.Split(new char[] { '=' });
+
+                // Who cares??? (also the lack of an equals sign breaks the parser)
+                if (line.ToUpperInvariant().StartsWith("ACTION")) continue;
+                    
+                tokens = line.Split(new char[] {'='});
                 if (tokens.Length != 2)
                 {
                     ReportError("Invalid line");
@@ -363,10 +368,15 @@ namespace CodeImp.DoomBuilder.SRB2
                         break;
                 }
             }
-            states.Add(new SRB2State(name, spritename, spriteframe, next));
+            states.Add(name, new SRB2State(name, spritename, spriteframe, next));
 
             return true;
-        }*/
+        }
+
+        private int ParseSpriteFrame(string v)
+        {
+            return 0;
+        }
 
         #endregion
 
