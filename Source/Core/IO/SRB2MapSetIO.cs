@@ -93,12 +93,12 @@ namespace CodeImp.DoomBuilder.IO
         public override int SlopeVertexType { get { return 750; } }
         public override int MaxThingHeight { get { return 4095; } }
         public override int MinThingHeight { get { return 0; } }
-        public override int ColormapType { get { return 606; } }
-        public override int FlatAlignmentType { get { return 7; } }
+        public override int ColormapType { get { return General.Map.Config.ColormapLineType; } }
+        public override int FlatAlignmentType { get { return 66; } }
         public override int HorizonLineType { get { return 41; } }
-        public override int AxisType { get { return 1700; } }
-        public override int AxisTransferType { get { return 1701; } }
-        public override int AxisTransferLineType { get { return 1702; } }
+        public override int AxisType { get { return General.Map.Config.AxisThingType; } }
+        public override int AxisTransferType { get { return General.Map.Config.AxisTransferThingType; } }
+        public override int AxisTransferLineType { get { return General.Map.Config.AxisTransferLineThingType; } }
         public override int WaypointType { get { return 753; } }
         #endregion
 

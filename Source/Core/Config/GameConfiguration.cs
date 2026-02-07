@@ -67,7 +67,12 @@ namespace CodeImp.DoomBuilder.Config
         private readonly bool mixtexturesflats;
 		private readonly bool generalizedactions;
 		private readonly bool generalizedeffects;
-		private readonly int start3dmodethingtype;
+        private readonly bool stupidnights;
+        private readonly int colormaplinetype;
+        private readonly int axisthingtype;
+        private readonly int axistransferthingtype;
+        private readonly int axistransferlinethingtype;
+        private readonly int start3dmodethingtype;
 		private readonly int linedefactivationsfilter;
 		private readonly string testparameters;
 		private readonly bool testshortpaths;
@@ -201,7 +206,12 @@ namespace CodeImp.DoomBuilder.Config
         public bool MixTexturesFlats { get { return mixtexturesflats; } }
 		public bool GeneralizedActions { get { return generalizedactions; } }
 		public bool GeneralizedEffects { get { return generalizedeffects; } }
-		public int Start3DModeThingType { get { return start3dmodethingtype; } }
+        public bool StupidNights { get { return stupidnights; } }
+        public int ColormapLineType { get { return colormaplinetype; } }
+        public int AxisThingType { get { return axisthingtype; } }
+        public int AxisTransferThingType { get { return axistransferthingtype; } }
+        public int AxisTransferLineThingType { get { return axistransferlinethingtype; } }
+        public int Start3DModeThingType { get { return start3dmodethingtype; } }
 		public int LinedefActivationsFilter { get { return linedefactivationsfilter; } }
 		public string TestParameters { get { return testparameters; } }
 		public bool TestShortPaths { get { return testshortpaths; } }
@@ -369,7 +379,17 @@ namespace CodeImp.DoomBuilder.Config
             mixtexturesflats = cfg.ReadSetting("mixtexturesflats", false);
 			generalizedactions = cfg.ReadSetting("generalizedlinedefs", false);
 			generalizedeffects = cfg.ReadSetting("generalizedsectors", false);
-			start3dmodethingtype = cfg.ReadSetting("start3dmode", 0);
+
+
+            stupidnights = cfg.ReadSetting("stupidnights", false);
+
+            // SRB2MapSetIO things
+            colormaplinetype = cfg.ReadSetting("colormaptype", 16);
+            axisthingtype = cfg.ReadSetting("axistype", 52);
+            axistransferthingtype = cfg.ReadSetting("axistransfer", 61);
+            axistransferlinethingtype = cfg.ReadSetting("axistransferl", 46);
+
+            start3dmodethingtype = cfg.ReadSetting("start3dmode", 0);
 			linedefactivationsfilter = cfg.ReadSetting("linedefactivationsfilter", 0);
 			testparameters = cfg.ReadSetting("testparameters", "");
 			testshortpaths = cfg.ReadSetting("testshortpaths", false);

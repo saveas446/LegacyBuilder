@@ -1536,10 +1536,21 @@ namespace CodeImp.DoomBuilder.Rendering
 
 			// Collect relevant things
 			foreach (Thing t in General.Map.Map.Things)
-            {
-                if (General.Settings.RenderNiGHTSPath && t.Type == General.Map.FormatInterface.AxisType)
-					axes.Add(t);
-                else if (General.Settings.RenderNiGHTSPath && t.Type == General.Map.FormatInterface.AxisTransferLineType)
+			{
+				if (General.Settings.RenderNiGHTSPath) {
+					if (!General.Map.Config.StupidNights)
+					{
+						if (t.Type == General.Map.FormatInterface.AxisType)
+							axes.Add(t);
+					} else
+					{
+						// WHY DOES 1.09.2 HAVE SIX DIFFERENT AXIS THINGS
+                        if (t.Type == 52 || t.Type == 53 || t.Type == 59 || t.Type == 15 || t.Type == 45 || t.Type == 62)
+                            axes.Add(t);
+                    }
+				}
+
+				if (General.Settings.RenderNiGHTSPath && t.Type == General.Map.FormatInterface.AxisTransferLineType)
 					axistransferlines.Add(t);
 				else if (General.Settings.RenderZoomtubes && t.Type == General.Map.FormatInterface.WaypointType)
 					waypoints.Add(t);
