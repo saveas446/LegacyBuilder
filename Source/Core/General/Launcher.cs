@@ -271,7 +271,7 @@ namespace CodeImp.DoomBuilder
 			outp = outp.Replace("%NM", p_nm);
             outp = outp + " +skin " + skin.ToLowerInvariant();
             if (gametype != -1)
-                outp = outp + " -server -gametype " + gametype.ToString();
+                outp = outp + " -gametype " + gametype.ToString();
 
             // Return result
             return outp;
