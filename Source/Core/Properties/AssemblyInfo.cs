@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Legacy Builder")]
 [assembly: AssemblyDescription("Lazy fork of Zone Builder for pre-2.1 SRB2 versions")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sonic Team Junior")]
+[assembly: AssemblyCompany("save_as")]
 [assembly: AssemblyProduct("Legacy Builder")]
-[assembly: AssemblyCopyright("Copyright © 2007, 2023, 2025")]
+[assembly: AssemblyCopyright("Copyright © 2007, 2023, 2025, 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,4 +28,4 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.3.1.2700")]
+[assembly: AssemblyVersion("0.4.0.2700")]
