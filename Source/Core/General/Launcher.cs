@@ -256,7 +256,31 @@ namespace CodeImp.DoomBuilder
 			outp = outp.Replace("%L2", p_l2);
 			if (!General.Map.Config.ExtendedMapNo)
 			{
-				outp = outp.Replace("%L", General.Map.Options.CurrentName);
+				int mapnum = 0;
+
+				// Add first digit
+				if (General.Map.Options.CurrentName[3] >= 'A')
+                {
+					mapnum += ((General.Map.Options.CurrentName[3] - 'A') * 36) + 100;
+				} else
+                {
+					// Nope
+					mapnum += (General.Map.Options.CurrentName[3] - '0') * 10;
+				}
+
+				// Add second digit
+				if (General.Map.Options.CurrentName[4] >= 'A')
+				{
+					mapnum += (General.Map.Options.CurrentName[4] - 'A') + 10;
+				}
+				else
+				{
+					// Nope
+					mapnum += General.Map.Options.CurrentName[4] - '0';
+				}
+
+				Console.WriteLine(Convert.ToString(mapnum));
+				outp = outp.Replace("%L", Convert.ToString(mapnum));
 			} else
 			{
                 outp = outp.Replace("%L", p_l1);
